@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+html,
+body {
+  font: 14px/1 "Open Sans", sans-serif;
+  background-color: #333;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  padding: 1.222em 2em 1.111em 2em;
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  background: #2ab22e;
+  transform: translate3d(0, 0, 0);
+  transition: 0.1s background, 0.1s transform;
+
+  &:hover {
+    background: darken(#2ab22e, 5);
+    transform: translate3d(0, 8px, 0);
+
+    &:after,
+    &:before {
+      height: 0;
+      background: darken(#2ab22e, 10);
+    }
+  }
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 50%;
+    height: 8px;
+    background: darken(#2ab22e, 5);
+    transition: 0.1s height, 0.1s background;
+  }
+
+  &:after {
+    right: 0;
+    transform: skewX(-45deg);
+    transform-origin: 0 0;
+  }
+
+  &:before {
+    left: 0;
+    transform: skewX(45deg);
+    transform-origin: 100% 0;
+  }
+}
+
+.App img {
+  width: 50px;
+  padding: 20px 20px;
+}
